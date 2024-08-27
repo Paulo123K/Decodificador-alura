@@ -1,0 +1,185 @@
+/* Fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, rgba(135, 206, 250, 0.2), rgba(135, 206, 250, 0.4)), url('imagens/codigos.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.6); /* Fundo branco com 60% de opacidade */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+    border-radius: 15px;
+    max-width: 1000px; /* Largura máxima ajustada */
+    width: 90%;
+    margin: 20px; /* Espaço ao redor do container */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo {
+    font-size: 3em;
+    font-weight: bold;
+    color: #2F4F4F; /* Cinza ardósia escuro */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo:hover {
+    color: #4682B4; /* Azul aço */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.text-areas {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as áreas se movam para a próxima linha em telas menores */
+    justify-content: space-between;
+    gap: 20px; /* Espaçamento ajustado entre as áreas de texto */
+}
+
+.input-section, .output-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 470px; /* Largura máxima ajustada */
+    width: 100%;
+    margin: 0 auto; /* Centraliza os quadrados */
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    padding: 15px;
+    border: 2px solid #B0E0E6; /* Borda azul claro */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra do textarea */
+    font-size: 1.1em; /* Ajustado para melhor legibilidade */
+    font-family: inherit;
+    resize: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-section textarea {
+    background-color: rgba(176, 224, 230, 0.8); /* Azul claro e opaco para a área de entrada */
+}
+
+.output-section textarea {
+    background-color: rgba(176, 224, 230, 0.5); /* Azul claro mais claro e opaco para a área de saída */
+}
+
+textarea:focus {
+    background-color: rgba(176, 224, 230, 0.9); /* Azul claro mais forte ao focar */
+    outline: none;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento aumentado entre os botões */
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Botões ocupam toda a largura disponível */
+}
+
+.encrypt-btn {
+    background-color: #4682B4; /* Azul aço */
+    color: white;
+}
+
+.decrypt-btn {
+    background-color: #5F9EA0; /* Azul cadete */
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.copy-btn {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #1E90FF; /* Azul dodger */
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #187bcd; /* Azul dodger mais escuro ao passar o mouse */
+}
+
+button:disabled {
+    background-color: #d3d3d3; /* Cinza claro para estado desativado */
+    cursor: not-allowed;
+}
+
+/* Notificação de texto copiado */
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #28a745; /* Verde para sucesso */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1000; /* Garante que a notificação apareça acima de outros elementos */
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .text-areas {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-section, .output-section {
+        max-width: 100%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .text-areas {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-section, .output-section {
+        max-width: 100%;
+        margin: 0;
+    }
+}
