@@ -1,5 +1,8 @@
 # Decodificador alura
 
+![Captura de Tela (299)](https://github.com/user-attachments/assets/c45249d0-5d7e-4e37-9671-9eb75ebd64f1)
+
+
 ## Codificador e Decodificador de Textos
 
 Este projeto é uma aplicação web que permite a criptografia e decodificação de textos com base em uma técnica de substituição personalizada. Desenvolvido com as tecnologias fundamentais da web HTML, CSS e JavaScript, oferecendo uma interface amigável e direta, onde os usuários podem rapidamente transformar suas mensagens em códigos ou revertê-las ao texto original.
