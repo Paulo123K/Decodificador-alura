@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificador e Decodificador de Textos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="logo">Codificador e Decodificador de Textos</h1>
+        <div class="text-areas">
+            <div class="input-section">
+                <textarea id="inputText" placeholder="Digite seu texto"></textarea>
+                <div class="buttons">
+                    <button class="encrypt-btn" onclick="encriptar()">Criptografar</button>
+                    <button class="decrypt-btn" onclick="desencriptar()">Descriptografar</button>
+                </div>
+            </div>
+            <div class="output-section">
+                <textarea id="outputText" placeholder="Resultado..." readonly></textarea>
+                <button class="copy-btn" onclick="copiarTexto()">Copiar</button>
+            </div>
+        </div>
+    </div>
+    <div id="notification" class="notification">Texto copiado!</div>
+    <script src="script.js"></script>
+</body>
+</html>
