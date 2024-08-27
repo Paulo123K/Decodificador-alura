@@ -1,0 +1,47 @@
+function encriptar() {
+   let texto = document.getElementById('inputText').value;
+
+   // Substituições definidas
+   texto = texto.replace(/a/g, 'ai');
+   texto = texto.replace(/e/g, 'enter');
+   texto = texto.replace(/i/g, 'imes');
+   texto = texto.replace(/o/g, 'ober');
+   texto = texto.replace(/u/g, 'ufat');
+
+   document.getElementById('outputText').value = texto;
+}
+
+function desencriptar() {
+   let texto = document.getElementById('inputText').value;
+
+   // Substituições inversas (na ordem correta para evitar conflito)
+   texto = texto.replace(/ufat/g, 'u');
+   texto = texto.replace(/ober/g, 'o');
+   texto = texto.replace(/imes/g, 'i');
+   texto = texto.replace(/enter/g, 'e');
+   texto = texto.replace(/ai/g, 'a');
+
+   document.getElementById('outputText').value = texto;
+}
+
+function copiarTexto() {
+   let textoCopiado = document.getElementById("outputText");
+   textoCopiado.select();
+   textoCopiado.setSelectionRange(0, 99999); // Para dispositivos móveis
+   
+   try {
+       // Tenta copiar o texto para a área de transferência
+       document.execCommand("copy");
+       
+       // Mostrar notificação
+       const notification = document.getElementById('notification');
+       notification.classList.add('show');
+       
+       // Ocultar notificação após 2 segundos
+       setTimeout(() => {
+           notification.classList.remove('show');
+       }, 2000);
+   } catch (err) {
+       console.error('Erro ao copiar o texto: ', err);
+   }
+}
